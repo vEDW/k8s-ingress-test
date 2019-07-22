@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: pong
+  labels:
+    app: ping-pong
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ping-pong
+    spec:
+      containers:
+      - name: ping
+        image: 'harbor.corp.local/ingress-test/pong:0.1'
+        ports:
+        - containerPort: 5000
+          name: pong
