@@ -17,3 +17,18 @@ spec:
         ports:
         - containerPort: 5000
           name: ping
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ping
+  labels:
+    app: ping-pong
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  selector:
+    app: ping
