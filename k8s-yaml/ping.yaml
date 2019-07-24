@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: ping_depl
+  name: ping-depl
   labels:
     app: ping
 spec:
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ping_svc
+  name: ping-svc
   labels:
     app: ping
 spec:
@@ -30,4 +30,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: ping_depl
+    app: ping-depl
