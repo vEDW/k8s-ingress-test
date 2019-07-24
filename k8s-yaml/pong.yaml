@@ -16,7 +16,6 @@ spec:
         image: 'harbor.corp.local/ingress-test/pong:0.1'
         ports:
         - containerPort: 5000
-          name: pong
 ---
 apiVersion: v1
 kind: Service

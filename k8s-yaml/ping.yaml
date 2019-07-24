@@ -1,29 +1,28 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: ping
+  name: ping_depl
   labels:
-    app: ping-pong
+    app: ping
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: ping-pong
+        app: ping
     spec:
       containers:
       - name: ping
         image: 'harbor.corp.local/ingress-test/ping:0.1'
         ports:
         - containerPort: 5000
-          name: ping
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: ping
+  name: ping_svc
   labels:
-    app: ping-pong
+    app: ping
 spec:
   ports:
   - port: 80
@@ -31,4 +30,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: ping
+    app: ping_depl

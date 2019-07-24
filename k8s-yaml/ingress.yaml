@@ -8,9 +8,9 @@ spec:
       paths:
       - path: /ping
         backend:
-          serviceName: ping
+          serviceName: ping_svc
           servicePort: 80
       - path: /pong
         backend:
-          serviceName: pong
+          serviceName: pong_svc
           servicePort: 80
