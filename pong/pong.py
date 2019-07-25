@@ -6,6 +6,7 @@ app = Flask(__name__)
 podname = socket.gethostname()
 
 @app.route("/")
+@app.route("/pong")
 def hello():
     message = "pong - " + podname 
     return message
