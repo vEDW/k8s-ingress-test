@@ -6,9 +6,8 @@ app = Flask(__name__)
 podname = socket.gethostname()
 
 @app.route("/")
-@app.route("/ping")
 def hello():
-    message = "pong - " + podname 
+    message = "ping - " + podname 
     return message
 
 if __name__ == "__main__":

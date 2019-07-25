@@ -5,7 +5,7 @@ metadata:
   labels:
     app: pong
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: ping
-        image: 'harbor.corp.local/ingress-test/pong:0.1'
+        image: 'harbor.corp.local/ingress-test/pong:latest'
         ports:
         - containerPort: 5000
 ---
