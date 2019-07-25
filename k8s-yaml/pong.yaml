@@ -1,15 +1,15 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: pong
+  name: pong-svc
   labels:
-    app: ping-pong
+    app: pong
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: ping-pong
+        app: pong
     spec:
       containers:
       - name: ping
@@ -20,9 +20,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pong
+  name: pong-svc
   labels:
-    app: ping-pong
+    app: pong
 spec:
   ports:
   - port: 80
